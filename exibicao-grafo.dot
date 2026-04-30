@@ -1,0 +1,43 @@
+digraph CRM_RafaLink {
+    rankdir=LR;
+    node [shape=box, style=rounded];
+
+    // ===== ÉPICO 1 =====
+    Lead -> Cadastro_Usuario [label="1"];
+    Lead -> Qualificacao [label="3"];
+    Cadastro_Usuario -> Qualificacao [label="3"];
+    Definicao_Acesso -> Qualificacao [label="2"];
+    Cadastro_Usuario -> Definicao_Acesso [label="1"];
+
+    // ===== ÉPICO 2 =====
+    Qualificacao -> Em_Contato [label="2"];
+    Qualificacao -> Lead_Perdido [label="5"];
+
+    Em_Contato -> Proposta_Enviada [label="2"];
+    Em_Contato -> Lead_Perdido [label="4"];
+
+    Proposta_Enviada -> Negociacao [label="2"];
+    Proposta_Enviada -> Lead_Perdido [label="3"];
+
+    Negociacao -> Agendamento [label="1"];
+    Negociacao -> Lead_Perdido [label="3"];
+
+    // ===== ÉPICO 3 =====
+    Agendamento -> Notificacao_Enviada [label="1"];
+
+    Notificacao_Enviada -> Sincronizacao_Agenda [label="1"];
+    Notificacao_Enviada -> Confirmacao [label="3"];
+
+    Sincronizacao_Agenda -> Confirmacao [label="1"];
+
+    // ===== ÉPICO 4 =====
+    Confirmacao -> Dashboard_Atualizado [label="1"];
+    Dashboard_Atualizado -> Relatorio_Gerado [label="1"];
+    Relatorio_Gerado -> Previsao_IA [label="2"];
+
+    // ===== NÓ DE DESCARTE =====
+    Lead_Perdido [shape=doublecircle, color=red];
+
+    // ===== NÓ FINAL =====
+    Previsao_IA [shape=doublecircle, color=green];
+}
