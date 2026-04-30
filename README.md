@@ -129,7 +129,7 @@ O trajeto passa por `Notificacao_Enviada → Sincronizacao_Agenda → Confirmaca
 
 ```bash
 # Clone o repositório
-git clone [https://github.com/rflmandell/rafalink-crm-sprint4.git](https://github.com/rflMandell/RafaLink-CRM-DP)
+git clone https://github.com/rflMandell/RafaLink-CRM-DP
 cd rafalink-crm-sprint4
 
 # Execute
